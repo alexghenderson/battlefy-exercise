@@ -4,7 +4,7 @@ const config = require('./now.json');
 const routes = config.routes.reduce(
   (r, route) => ({
     ...r,
-    [route.src]: require(`./${route.dest}`),
+    [route.src]: require(`./api/search.js`),
   }),
   {}
 );
@@ -16,5 +16,5 @@ const notFound = (_, res) => {
 
 module.exports = async (req, res) => {
   const [url] = req.url.split('?');
-  return (routes[url] || notFound)(req, res);
+  return (require(`./api/search.js`))(req, res);
 };
