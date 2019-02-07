@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "battlefy-exercise",
+  "builds": [],
+  "routes": [],
+  "env": {
+    "LOL_API_KEY": "@league_api_key"
+  }
+}
