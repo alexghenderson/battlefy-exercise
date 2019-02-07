@@ -1,10 +1,13 @@
 const axios = require('axios');
+const getSpell = require('./spells');
+const getChampion = require('./champions');
+const getItem = require('./items');
 
 const apiKey = process.env.LOL_API_KEY;
 
 const getMatchByGameId = async (gameId, region = 'NA1') => {
   const response = await axios.get(
-    `https://${region}.api.riotgames.com/lol/match/v4/matches/${matchId}?api_key=${apiKey}`
+    `https://${region}.api.riotgames.com/lol/match/v4/matches/${gameId}?api_key=${apiKey}`
   );
 
   return response.data;
@@ -48,8 +51,8 @@ const getMatchSummary = async (match, perspective) => {
   const players = match.participantIdentities.map(identity => ({
     data: participants.find(p => p.participantId == identity.participantId),
     accountId: identity.player.currentAccountId,
-    name: p.player.summonerName,
-    profileIcon: p.player.profileIcon,
+    name: identity.player.summonerName,
+    profileIcon: identity.player.profileIcon,
   }));
 
   const teams = match.teams.map(t => ({
