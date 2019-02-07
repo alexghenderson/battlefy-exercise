@@ -21,7 +21,7 @@ const getMatchSummary = async (match, perspective) => {
       participantId: p.participantId,
       team: p.teamId === 100 ? 'blue' : 'red',
       spells: [await getSpell(p.spell1Id), await getSpell(p.spell2Id)],
-      champion: getChampion(p.championId),
+      champion: await getChampion(p.championId),
       level: p.stats.champLevel,
       kills: p.stats.kills,
       assists: p.stats.assits,
