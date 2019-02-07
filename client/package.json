@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "League stats viewer client",
   "scripts": {
-    "dev": "dotenv -e ../.env next -p 8000",
+    "dev": "dotenv -e ../.env yarn dev-next",
+    "dev-next": "next -p 8000",
     "build": "next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
