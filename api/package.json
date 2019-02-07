@@ -1,0 +1,15 @@
+{
+  "name": "battlefy-exercise-api",
+  "version": "1.0.0",
+  "description": "League stats viewer api",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Henderson",
+  "license": "ISC",
+  "homepage": "https://github.com/alexghenderson/battlefy-exercise#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "query-string": "^6.2.0"
+  }
+}
