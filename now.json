@@ -3,11 +3,19 @@
   "name": "battlefy-exercise",
   "builds": [
     {"src": "api/search.js", "use": "@now/node"},
-    {"src": "client/package.json", "use": "@now/next"}
+    {"src": "client/next.config.js", "use": "@now/next"}
   ],
   "routes": [
-    {"src": "/api/search", "dest": "api/search.js"},
-    {"src": "/.*", "dest": "/client/package.json"}
+    {
+      "src": "/api/search",
+      "dest": "api/search.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+      }
+    },
+    {"src": "/(.*)", "dest": "/client/$1"}
   ],
   "env": {
     "API_ENDPOINT": "/api/search",
