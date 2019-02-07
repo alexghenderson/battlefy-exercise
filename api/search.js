@@ -35,9 +35,8 @@ module.exports = async (req, res) => {
         return res.end('Summoner not found');
       }
 
-      res.statusCode = 500;
-      // Output the error in development
-      return res.end(debug ? inspect(err) : 'An error occurred');
+      res.statusCode = 500;ß
+      return res.end(inspect(err));
     }
   } else {
     // Name is invalid
