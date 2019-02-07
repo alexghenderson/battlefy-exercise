@@ -24,7 +24,7 @@ const getMatchSummary = async (match, perspective) => {
       champion: await getChampion(p.championId),
       level: p.stats.champLevel,
       kills: p.stats.kills,
-      assists: p.stats.assits,
+      assists: p.stats.assists,
       deaths: p.stats.deaths,
       wards: p.stats.wardsPlaced,
       items: [
