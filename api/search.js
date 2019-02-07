@@ -17,9 +17,9 @@ module.exports = async (req, res) => {
       const summoner = await getSummonerByName(name, region);
       const matches = await getSummonerMatches(summoner, region);
 
-      // Only show top 5 matches due to rate limiting
+      // Only show top 3 matches due to rate limiting
       // Future changes could involve saving matches in a db
-      const topFive = matches.splice(0, 5);
+      const topFive = matches.splice(0, 3);
 
       const summaries = await Promise.all(
         topFive.map(async match => {
