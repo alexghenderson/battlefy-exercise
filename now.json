@@ -1,8 +1,14 @@
 {
   "version": 2,
   "name": "battlefy-exercise",
-  "builds": [{"src": "api/search.js", "use": "@now/node"}],
-  "routes": [{"src": "/api/search", "dest": "api/search.js"}],
+  "builds": [
+    {"src": "api/search.js", "use": "@now/node"},
+    {"src": "client/package.json", "use": "@now/next"}
+  ],
+  "routes": [
+    {"src": "/api/search", "dest": "api/search.js"},
+    {"src": "/.*", "dest": "/client/package.json"}
+  ],
   "env": {
     "API_ENDPOINT": "/api/search",
     "LOL_API_KEY": "@league_api_key",
