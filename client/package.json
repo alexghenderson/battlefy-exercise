@@ -13,6 +13,7 @@
   "license": "ISC",
   "homepage": "https://github.com/alexghenderson/battlefy-exercise#readme",
   "dependencies": {
+    "lodash.get": "^4.4.2",
     "next": "^7.0.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
