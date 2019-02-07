@@ -12,7 +12,7 @@ const SummonerSearch = () => {
   const [error, setError] = React.useState(null);
   const handleSearch = React.useCallback(async (name, region) => {
     try {
-      const matches = await getSummonerMatches(name, region);
+      const matches = await getSummonerMatches(name, region, true);
       setMatches(matches);
     } catch (err) {
       setMatches([]);
@@ -21,10 +21,13 @@ const SummonerSearch = () => {
   });
 
   return (
-    <>
+    <div css={`
+      display: flex;
+      flex-direction: column;
+    `}>
       <SearchBar onSearch={handleSearch} />
       <SearchResults error={error} matches={matches} />
-    </>
+    </div>
   );
 };
 

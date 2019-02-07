@@ -12,7 +12,7 @@ const SearchBar = ({ onSearch }) => {
 
   const handleSearch = React.useCallback(() => {
     onSearch(name.field.value, region.field.value);
-  }, [onSearch]);
+  }, [onSearch, name.field.value, region.field.value]);
 
   return (
     <div
@@ -21,7 +21,7 @@ const SearchBar = ({ onSearch }) => {
       `}
     >
       <RegionSelect {...region.field} />
-      <Input {...name.field} />
+      <Input placeholder="Summoner Name" {...name.field} />
       <Button onClick={handleSearch}>Go</Button>
     </div>
   );
