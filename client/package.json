@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "League stats viewer client",
   "scripts": {
-    "dev": "next",
+    "dev": "dotenv -e ../.env next -p 8000",
     "build": "next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,6 +20,7 @@
   "devDependencies": {
     "babel-plugin-root-import": "^6.1.0",
     "babel-plugin-styled-components": "^1.10.0",
+    "dotenv-cli": "^1.4.0",
     "eslint": "^5.13.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
