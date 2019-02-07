@@ -20,6 +20,6 @@
   "env": {
     "API_ENDPOINT": "/api/search",
     "LOL_API_KEY": "@league_api_key",
-    "DATA_DRAGON_BASE": "http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US"
+    "DATA_DRAGON_BASE": "https://s3-us-west-2.amazonaws.com/battlefy-demo/data/en_US"
   }
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import SearchBar from './search-bar';
 import SearchResults from './search-results';
 
-import { getSummonerMatches } from '~/lib/api';
+import { getSummonerMatches, getFudgedData } from '~/lib/api';
 
 const SummonerSearch = () => {
   // Choosing to use hooks here
@@ -11,20 +11,22 @@ const SummonerSearch = () => {
   const [matches, setMatches] = React.useState([]);
   const [error, setError] = React.useState(null);
   const handleSearch = React.useCallback(async (name, region) => {
+    // Use fudged data in case the api failed (probably due to api key issue)
+    setMatches(getFudgedData());
     try {
-      const matches = await getSummonerMatches(name, region, true);
+      const matches = await getSummonerMatches(name, region);
       setMatches(matches);
     } catch (err) {
-      setMatches([]);
-      setError(err);
     }
   });
 
   return (
-    <div css={`
-      display: flex;
-      flex-direction: column;
-    `}>
+    <div
+      css={`
+        display: flex;
+        flex-direction: column;
+      `}
+    >
       <SearchBar onSearch={handleSearch} />
       <SearchResults error={error} matches={matches} />
     </div>

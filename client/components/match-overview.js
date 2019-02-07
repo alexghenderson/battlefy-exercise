@@ -18,7 +18,7 @@ const ItemsOverview = ({ items }) => {
         `}
       >
         {items[0] !== null && (
-          <img src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/${items[0].image}`} />
+          <img src={`https://s3-us-west-2.amazonaws.com/battlefy-demo/img/item/${items[0].image}`} />
         )}
       </div>
       <div
@@ -29,7 +29,7 @@ const ItemsOverview = ({ items }) => {
         `}
       >
         {items[1] !== null && (
-          <img src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/${items[1].image}`} />
+          <img src={`https://s3-us-west-2.amazonaws.com/battlefy-demo/img/item/${items[1].image}`} />
         )}
       </div>
       <div
@@ -40,7 +40,7 @@ const ItemsOverview = ({ items }) => {
         `}
       >
         {items[2] !== null && (
-          <img src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/${items[2].image}`} />
+          <img src={`https://s3-us-west-2.amazonaws.com/battlefy-demo/img/item/${items[2].image}`} />
         )}
       </div>
       <div
@@ -51,7 +51,7 @@ const ItemsOverview = ({ items }) => {
         `}
       >
         {items[3] !== null && (
-          <img src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/${items[3].image}`} />
+          <img src={`https://s3-us-west-2.amazonaws.com/battlefy-demo/img/item/${items[3].image}`} />
         )}
       </div>
       <div
@@ -62,7 +62,7 @@ const ItemsOverview = ({ items }) => {
         `}
       >
         {items[4] !== null && (
-          <img src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/${items[4].image}`} />
+          <img src={`https://s3-us-west-2.amazonaws.com/battlefy-demo/img/item/${items[4].image}`} />
         )}
       </div>
       <div
@@ -73,7 +73,7 @@ const ItemsOverview = ({ items }) => {
         `}
       >
         {items[5] !== null && (
-          <img src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/${items[5].image}`} />
+          <img src={`https://s3-us-west-2.amazonaws.com/battlefy-demo/img/item/${items[5].image}`} />
         )}
       </div>
     </div>
@@ -142,7 +142,7 @@ const ChampionOveriew = ({ champion, spell1, spell2 }) => {
         `}
         src={
           champion
-            ? `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${champion.image}`
+            ? `https://s3-us-west-2.amazonaws.com/battlefy-demo/img/champion/${champion.image}`
             : ''
         }
       />
@@ -165,7 +165,7 @@ const ChampionOveriew = ({ champion, spell1, spell2 }) => {
           grid-area: spell1;
         `}
         src={
-          spell1 ? `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/${spell1.image}` : ''
+          spell1 ? `https://s3-us-west-2.amazonaws.com/battlefy-demo/img/spell/${spell1.image}` : ''
         }
       />
       <img
@@ -177,7 +177,7 @@ const ChampionOveriew = ({ champion, spell1, spell2 }) => {
           grid-area: spell2;
         `}
         src={
-          spell2 ? `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/${spell2.image}` : ''
+          spell2 ? `https://s3-us-west-2.amazonaws.com/battlefy-demo/img/spell/${spell2.image}` : ''
         }
       />
     </div>
