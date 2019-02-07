@@ -3,6 +3,8 @@ const dataDragon = require('./data-dragon');
 module.exports = async id => {
   const items = await dataDragon('item.json');
 
-  // TODO: strip out unneeded data
-  return items;
+  const item = items[id.toString()];
+  return item
+    ? {name: item.name, image: item.image.full, key: id.toString()}
+    : null;
 };
