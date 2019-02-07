@@ -1,7 +1,7 @@
 const dataDragon = require('./data-dragon');
 
 module.exports = async id => {
-  const spells = await dataDragon('champion.json');
+  const spells = await dataDragon('summoner.json');
   const map = Object.values(spells).reduce(
     (prev, cur) => ({
       ...prev,
