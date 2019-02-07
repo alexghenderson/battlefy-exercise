@@ -1,11 +1,30 @@
 import React from 'react';
 
 import Input from './input';
+import Button from './button';
+import RegionSelect from './region-select';
+
 import useField from '~/lib/use-field';
 
 const SearchBar = ({ onSearch }) => {
-  const search = useField('');
-  return <Input {...search.field} />;
+  const name = useField('');
+  const region = useField('NA1');
+
+  const handleSearch = React.useCallback(() => {
+    onSearch(name.field.value, region.field.value);
+  }, [onSearch]);
+
+  return (
+    <div
+      css={`
+        display: flex;
+      `}
+    >
+      <RegionSelect {...region.field} />
+      <Input {...name.field} />
+      <Button onClick={handleSearch}>Go</Button>
+    </div>
+  );
 };
 
 export default SearchBar;
