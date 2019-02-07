@@ -14,7 +14,7 @@ const getSummonerMatches = async (summoner, region = 'NA1') => {
   const response = await axios.get(
     `https://${region}.api.riotgames.com/lol/match/v4/matchlists/by-account/${accountId}?api_key=${apiKey}`
   );
-  return response.data;
+  return response.data.matches;
 };
 
 module.exports = {
