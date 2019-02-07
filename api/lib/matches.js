@@ -37,7 +37,7 @@ const getMatchSummary = async (match, perspective) => {
         await getItem(p.stats.item5),
         await getItem(p.stats.item6),
       ],
-      creepScore: p.stats.neutralMinionsKilled,
+      creepScore: p.stats.totalMinionsKilled,
       masteries: {
         // TODO: (maybe?) - get details of masteries
         // this should be enough for displaying images though
